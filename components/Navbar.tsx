@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 const Navbar: React.FC = () => {
 	return (
-		<header id='navbar' className='sticky top-0 z-50 duration-300'>
+		<header id='navbar' className='sticky top-0 z-50 duration-300 w-full'>
 			<nav className='relative container flex justify-between items-center'>
 				<div className='py-5 pe-4'>
 					<Image src={MyImage} height={50} width={50} alt='my logo' />
