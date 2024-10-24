@@ -12,7 +12,7 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Poppins;
 }
 
 header#navbar .text-whiteColor {
@@ -166,6 +166,8 @@ header#navbar .text-whiteColor {
   /* My Skills */
   .skills_card img {
     @apply duration-300;
+    width: 95px;
+    height: 95px;
   }
 
   .skills_card:hover img {

@@ -2,7 +2,6 @@ import { Metadata } from 'next';
 import Head from 'next/head';
 import localFont from 'next/font/local';
 import './globals.css';
-import Script from 'next/script';
 
 const geistSans = localFont({
 	src: './fonts/GeistVF.woff',
@@ -29,8 +28,7 @@ export default function RootLayout({
 	return (
 		<html lang='en'>
 			<Head>
-				{/* Favicon */}
-				<link rel='shortcut icon' href='/images/favicon.png' type='image/x-icon' />
+				<link rel='shortcut icon' href='#' />
 				{/* Font Awesome */}
 				<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css' integrity='sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==' crossOrigin='anonymous' referrerPolicy='no-referrer' />
 				{/* Remix Icon */}
