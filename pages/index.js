@@ -8,29 +8,28 @@ export default function Home() {
 	const form = useRef();
 	const [emailSent, setEmailSent] = useState(false);
 
-	const sendEmail = () => {
-		emailjs
-			.sendForm(
+	const sendEmail = async () => {
+		try {
+			const result = await emailjs.sendForm(
 				'service_a9i7w8t', // Replace with your EmailJS service ID
 				'template_z3ha9dq', // Replace with your EmailJS template ID
 				form.current,
 				'YAe0W4bWvMZF5ATKV' // Replace with your EmailJS user ID
-			)
-			.then(
-				(result) => {
-					setEmailSent(true);
-				},
-				(error) => {
-					console.error('Error:', error.text);
-				}
 			);
-
-		// e.target.reset(); // Optionally reset the form after submission
+			if (result.status === 200) {
+				setEmailSent(true);
+				form.current.reset();
+			}
+		} catch (error) {
+			console.error('Error:', error.text);
+		}
 	};
+
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		await sendEmail();
 	};
+
 	return (
 		<div className='flex items-center justify-center bg-gray-100 flex-col'>
 			<Navbar />
@@ -47,7 +46,7 @@ export default function Home() {
 						{/* hero content  */}
 						<div className='flex items-center gap-5'>
 							<div className='hero__content space-y-2 md:w-1/2'>
-								<h3 className='text-2xl md:text-3xl lg:text-4xl font-bold'>Hey, I'm Brooke</h3>
+								<h3 className='text-2xl md:text-3xl lg:text-4xl font-bold'>Hey, I&apos;m Brooke</h3>
 								<h1>
 									<span className='title'> Frontend Developer + </span>
 									<br />
@@ -85,7 +84,7 @@ export default function Home() {
 							<div className='hero__image relative hidden md:w-1/2 md:flex justify-center'>
 								{/* blob */}
 								<div className='absolute left-0 bottom-0 w-80 h-80 bg-primaryColorLight mix-blend-screen rounded-full blur-[150px] opacity-50' />
-								<img src='/images/person.jpg' alt='person' className='my-10 md:w-full lg:max-w-[80%] duration-300 origin-center rotate-[4.5deg] border-2 border-primaryColor rounded-[38px] hover:rotate-0 hover:border-primaryColorLight' />
+								<Image src='/images/person.jpg' alt='person' className='my-10 md:w-full lg:max-w-[80%] duration-300 origin-center rotate-[4.5deg] border-2 border-primaryColor rounded-[38px] hover:rotate-0 hover:border-primaryColorLight' width={500} height={500} />{' '}
 							</div>
 						</div>
 						{/* hero footer  */}
@@ -208,7 +207,7 @@ export default function Home() {
 						<ul className='grid grid-cols-1 gap-5 lg:gap-10 md:grid-cols-2'>
 							{/* Development, ui/ux, project management  */}
 							<li className='work_card development  uiux projectManagement relative bg-sectionColor dark:bg-darkSectionColor p-5 lg:p-8 rounded-2xl border border-transparent hover:border-primaryColor duration-300 overflow-hidden'>
-								<img src='images/Bookfinity.png' alt='' className='w-full' />
+								<Image src='/images/Bookfinity.png' alt='Bookfinity logo' className='w-full' width={500} height={500} />
 								<div className='absolute left-0 right-0 bottom-[-100%] p-5 lg:p-8'>
 									<div className='flex items-center justify-between bg-gradient-to-r from-primaryColorLight to-primaryColor text-whiteColor p-5 rounded-t-2xl'>
 										<div>
@@ -225,7 +224,7 @@ export default function Home() {
 								</div>
 							</li>
 							<li className='work_card development relative bg-sectionColor dark:bg-darkSectionColor p-5 lg:p-8 rounded-2xl border border-transparent hover:border-primaryColor duration-300 overflow-hidden'>
-								<img src='images/Creedence.png' alt='' className='w-full' />
+								<Image width={500} height={500} src='/images/Creedence.png' alt='' className='w-full' />
 								<div className='absolute left-0 right-0 bottom-[-100%] p-5 lg:p-8'>
 									<div className='flex items-center justify-between bg-gradient-to-r from-primaryColorLight to-primaryColor text-whiteColor p-5 rounded-t-2xl'>
 										<div>
@@ -242,7 +241,7 @@ export default function Home() {
 								</div>
 							</li>
 							<li className='work_card development relative bg-sectionColor dark:bg-darkSectionColor p-5 lg:p-8 rounded-2xl border border-transparent hover:border-primaryColor duration-300 overflow-hidden'>
-								<img src='images/MCS.png' alt='' className='w-full' />
+								<Image width={500} height={500} src='/images/MCS.png' alt='' className='w-full' />
 								<div className='absolute left-0 right-0 bottom-[-100%] p-5 lg:p-8'>
 									<div className='flex items-center justify-between bg-gradient-to-r from-primaryColorLight to-primaryColor text-whiteColor p-5 rounded-t-2xl'>
 										<div>
@@ -341,7 +340,7 @@ export default function Home() {
 						{/* figma icon  */}
 						<div className='skills_card max-w-44 w-full'>
 							<div className='bg-sectionColor dark:bg-darkSectionColor grid place-items-center px-4 py-7 rounded-3xl space-y-5 grayscale-[85%] hover:grayscale-0 hover:bg-primaryColor border border-transparent hover:border-primaryColorLight duration-300'>
-								<img src='images/figma.svg' alt='' className='max-w-16' />
+								<Image width={50} height={50} src='/images/figma.svg' alt='' className='max-w-16' />
 								<p className='text-2xl font-bold text-primaryColorLight'>60%</p>
 							</div>
 							<p className='text-center text-primaryColorLight mt-3'>Figma</p>
@@ -349,7 +348,7 @@ export default function Home() {
 						{/* WordPess icon  */}
 						<div className='skills_card max-w-44 w-full'>
 							<div className='bg-sectionColor dark:bg-darkSectionColor grid place-items-center px-4 py-7 rounded-3xl space-y-5 grayscale-[85%] hover:grayscale-0 hover:bg-primaryColor border border-transparent hover:border-primaryColorLight duration-300'>
-								<img src='images/wp.svg' alt='' className='max-w-16' />
+								<Image width={50} height={50} src='/images/wp.svg' alt='' className='max-w-16' />
 								<p className='text-2xl font-bold text-primaryColorLight'>75%</p>
 							</div>
 							<p className='text-center text-primaryColorLight mt-3'>WordPess</p>
@@ -357,7 +356,7 @@ export default function Home() {
 						{/* React icon  */}
 						<div className='skills_card max-w-44 w-full'>
 							<div className='bg-sectionColor dark:bg-darkSectionColor grid place-items-center px-4 py-7 rounded-3xl space-y-5 grayscale-[85%] hover:grayscale-0 hover:bg-primaryColor border border-transparent hover:border-primaryColorLight duration-300'>
-								<img src='images/react.svg' alt='' className='max-w-16' />
+								<Image src='/images/react.svg' alt='' className='max-w-16' width={50} height={50} />
 								<p className='text-2xl font-bold text-primaryColorLight'>90%</p>
 							</div>
 							<p className='text-center text-primaryColorLight mt-3'>React.js</p>
@@ -365,7 +364,7 @@ export default function Home() {
 						{/* JavaScript icon  */}
 						<div className='skills_card max-w-44 w-full'>
 							<div className='bg-sectionColor dark:bg-darkSectionColor grid place-items-center px-4 py-7 rounded-3xl space-y-5 grayscale-[85%] hover:grayscale-0 hover:bg-primaryColor border border-transparent hover:border-primaryColorLight duration-300'>
-								<img src='images/js.svg' alt='' className='max-w-16' />
+								<Image width={50} height={50} src='/images/js.svg' alt='' className='max-w-16' />
 								<p className='text-2xl font-bold text-primaryColorLight'>75%</p>
 							</div>
 							<p className='text-center text-primaryColorLight mt-3'>JavaScript</p>
@@ -373,7 +372,7 @@ export default function Home() {
 						{/* TypeScript icon  */}
 						<div className='skills_card max-w-44 w-full'>
 							<div className='bg-sectionColor dark:bg-darkSectionColor grid place-items-center px-4 py-7 rounded-3xl space-y-5 grayscale-[85%] hover:grayscale-0 hover:bg-primaryColor border border-transparent hover:border-primaryColorLight duration-300'>
-								<img src='images/typescript.svg' alt='' className='max-w-16' />
+								<Image width={50} height={50} src='/images/typescript.svg' alt='' className='max-w-16' />
 								<p className='text-2xl font-bold text-primaryColorLight'>50%</p>
 							</div>
 							<p className='text-center text-primaryColorLight mt-3'>TypeScript</p>
@@ -381,7 +380,7 @@ export default function Home() {
 						{/* Next.js icon  */}
 						<div className='skills_card max-w-44 w-full'>
 							<div className='bg-sectionColor dark:bg-darkSectionColor grid place-items-center px-4 py-7 rounded-3xl space-y-5 grayscale-[85%] hover:grayscale-0 hover:bg-primaryColor border border-transparent hover:border-primaryColorLight duration-300'>
-								<img src='images/next-js.svg' alt='' className='max-w-16' />
+								<Image width={50} height={50} src='/images/next-js.svg' alt='' className='max-w-16' />
 								<p className='text-2xl font-bold text-primaryColorLight'>85%</p>
 							</div>
 							<p className='text-center text-primaryColorLight mt-3'>Next.js</p>
@@ -397,7 +396,7 @@ export default function Home() {
 						</div>
 						<div className='w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-10 px-5'>
 							<div className='blog_card relative overflow-hidden rounded-3xl cursor-pointer'>
-								<img src='/images/blog-1.jpg' alt='' />
+								<Image width={50} height={50}  src='/images/blog-1.jpg' alt='' />
 								<p className='absolute top-3 left-3 uppercase text-sm bg-primaryColorLight text-whiteColor py-1 px-3 rounded-full'>tutorial</p>
 								<div className='blog_card_info absolute left-0 right-0 bottom-0 bg-whiteColor dark:bg-primaryColor mx-4 my-3 rounded-2xl space-y-1 p-3'>
 									<div className='text-primaryColorLight flex items-center gap-3 text-sm'>
@@ -412,7 +411,7 @@ export default function Home() {
 								</div>
 							</div>
 							<div className='blog_card relative overflow-hidden rounded-3xl cursor-pointer'>
-								<img src='/images/blog-2.jpg' alt='' />
+								<Image width={50} height={50}  src='/images/blog-2.jpg' alt='' />
 								<p className='absolute top-3 left-3 uppercase text-sm bg-primaryColorLight text-whiteColor py-1 px-3 rounded-full'>tips</p>
 								<div className='blog_card_info absolute left-0 right-0 bottom-0 bg-whiteColor dark:bg-primaryColor mx-4 my-3 rounded-2xl space-y-1 p-3'>
 									<div className='text-primaryColorLight flex items-center gap-3 text-sm'>
@@ -427,7 +426,7 @@ export default function Home() {
 								</div>
 							</div>
 							<div className='blog_card relative overflow-hidden rounded-3xl cursor-pointer'>
-								<img src='/images/blog-3.jpg' alt='' />
+								<Image width={50} height={50}  src='/images/blog-3.jpg' alt='' />
 								<p className='absolute top-3 left-3 uppercase text-sm bg-primaryColorLight text-whiteColor py-1 px-3 rounded-full'>freebies</p>
 								<div className='blog_card_info absolute left-0 right-0 bottom-0 bg-whiteColor dark:bg-primaryColor mx-4 my-3 rounded-2xl space-y-1 p-3'>
 									<div className='text-primaryColorLight flex items-center gap-3 text-sm'>
