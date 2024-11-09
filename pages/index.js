@@ -39,8 +39,7 @@ export default function Home() {
 					{/* blob */}
 					<div className='absolute right-0 top-[-20%] w-80 h-80 bg-primaryColorLight mix-blend-screen rounded-full blur-[150px] opacity-50' />
 					<div className='container'>
-						{/* bg image  */}
-						<div className='hidden md:block absolute top-0 animate-scaleAnimation'>
+						<div className='hidden md:block absolute top-0 left-[30%] lg:left-[35%] animate-scaleAnimation'>
 							<p className='font-Londrina text-[400px] lg:text-[450px] text-primaryColorLight uppercase -z-10 opacity-5'>hi</p>
 						</div>
 						{/* hero content  */}
@@ -57,7 +56,7 @@ export default function Home() {
 									<div className='absolute left-0 bottom-0 w-80 h-80 bg-primaryColorLight mix-blend-screen rounded-full blur-[150px] opacity-50' />
 									<Image src='/images/person.jpg' alt='person' height='200' width='300' className='my-10 max-w-[90%] duration-300 origin-center rotate-[4.5deg] border-2 border-primaryColor rounded-[38px] hover:rotate-0 hover:border-primaryColorLight' />
 								</div>
-								<p className='max-w-xl text-xl pb-5'>I thrive on creating seamless user experiences and clean, scalable code. I have a passion for collaboration, problem-solving, and transforming complex ideas into intuitive designs.</p>
+								<p className='max-w-xl pb-2'>As a driven Frontend Developer and UI/UX Designer with hands-on experience leading projects and collaborating across teams, I specialize in designing and developing robust web applications that prioritize user satisfaction and deliver measurable success. My expertise in React, Redux, modern state management, and CSS frameworks allows me to build seamless, high-performance applications that resonate with users and meet business objectives.</p>
 								<div className='flex items-center flex-wrap gap-5'>
 									<a href='/assets/BrookeKennisonResume.pdf' download>
 										<button className='btn_outline'>
@@ -118,60 +117,60 @@ export default function Home() {
 					<div className='container'>
 						<div className='quality_services_top flex flex-col items-center gap-5 text-center'>
 							<h2 className='subtitle'>What I Offer</h2>
-							<p className='max-w-2xl'>I transform your ideas into distinctive web projects that inspire both you and your customers.</p>
+							<p className='max-w-3xl'>With a blend of technical expertise, creative design, and a user-first approach, I’m here to help you build web applications that stand out and deliver real value. Whether you’re looking to enhance user experience, streamline your codebase, or implement modern technologies, I provide the solutions you need to achieve your goals.</p>
 						</div>
 						{/* list section  */}
 						<div className='my-10'>
 							{/* item 1 */}
 							<div className='service_item'>
-								<div className='text-xl md:text-2xl lg:text-3xl font-bold flex items-center gap-3 md:w-[40%]'>
+								<div className='text-xl md:text-2xl font-bold flex items-center gap-3 md:w-[40%]'>
 									<p className='text-primaryColorLight hover:text-whiteColor'>01</p>
-									<p>Customized Technology Solutions</p>
+									<p>User-Centered Development</p>
 								</div>
 								<div className='ml-auto text-2xl origin-center rotate-45 md:order-last'>
 									<i className='fa-solid fa-arrow-right-long' />
 								</div>
 								<div>
-									<p className='md:max-w-[330px] lg:max-w-md xl:max-w-lg'>I develop tech strategies tailored to your business needs, optimizing existing systems or building new applications to drive growth.</p>
+									<p className='md:max-w-[330px] lg:max-w-md xl:max-w-lg'>I prioritize the end user in every decision, ensuring applications are intuitive, accessible, and enjoyable to use. By focusing on user experience from the start, I create products that not only meet but exceed user expectations, driving higher engagement and satisfaction. </p>
 								</div>
 							</div>
 							{/* item 2 */}
 							<div className='service_item'>
-								<div className='text-xl md:text-2xl lg:text-3xl font-bold flex items-center gap-3 md:w-[40%]'>
+								<div className='text-xl md:text-2xl font-bold flex items-center gap-3 md:w-[40%]'>
 									<p className='text-primaryColorLight hover:text-whiteColor'>02</p>
-									<p>Engaging Frontend Development</p>
+									<p>Modern Frontend Expertise</p>
 								</div>
 								<div className='ml-auto text-2xl origin-center rotate-45 md:order-last'>
 									<i className='fa-solid fa-arrow-right-long' />
 								</div>
 								<div>
-									<p className='md:max-w-[330px] lg:max-w-md xl:max-w-lg'>I create responsive web applications that attract users and enhance performance, ensuring your brand stands out.</p>
+									<p className='md:max-w-[330px] lg:max-w-md xl:max-w-lg'>With hands-on experience in React, Redux, Next.js, and state management solutions, I bring a technical edge that allows your application to perform seamlessly. My approach integrates cutting-edge frontend technologies with best practices to deliver fast, scalable, and future-proof solutions.</p>
 								</div>
 							</div>
 							{/* item 3 */}
 							<div className='service_item'>
-								<div className='text-xl md:text-2xl lg:text-3xl font-bold flex items-center gap-3 md:w-[40%]'>
+								<div className='text-xl md:text-2xl font-bold flex items-center gap-3 md:w-[40%]'>
 									<p className='text-primaryColorLight hover:text-whiteColor'>03</p>
-									<p>Scalable Architecture Design</p>
+									<p>Seamless UI/UX Integration</p>
 								</div>
 								<div className='ml-auto text-2xl origin-center rotate-45 md:order-last'>
 									<i className='fa-solid fa-arrow-right-long' />
 								</div>
 								<div>
-									<p className='md:max-w-[330px] lg:max-w-md xl:max-w-lg'>I design flexible systems that accommodate growth and enable seamless integration of new features.</p>
+									<p className='md:max-w-[330px] lg:max-w-md xl:max-w-lg'>I bridge the gap between design and development, creating interfaces that are as functional as they are beautiful. From user flow mapping to advanced prototyping in Figma, I bring your ideas to life with an attention to detail that enhances usability and aesthetic appeal.</p>
 								</div>
 							</div>
 							{/* item 4 */}
 							<div className='service_item'>
-								<div className='text-xl md:text-2xl lg:text-3xl font-bold flex items-center gap-3 md:w-[40%]'>
+								<div className='text-xl md:text-2xl font-bold flex items-center gap-3 md:w-[40%]'>
 									<p className='text-primaryColorLight hover:text-whiteColor'>04</p>
-									<p>Team-Centric Collaboration</p>
+									<p>Reliable Project Leadership</p>
 								</div>
 								<div className='ml-auto text-2xl origin-center rotate-45 md:order-last'>
 									<i className='fa-solid fa-arrow-right-long' />
 								</div>
 								<div>
-									<p className='md:max-w-[330px] lg:max-w-md xl:max-w-lg'>I promote clear communication and an iterative process, ensuring your vision is realized while empowering your team for success.</p>
+									<p className='md:max-w-[330px] lg:max-w-md xl:max-w-lg'>As an experienced lead developer, I’m committed to clear communication, deadline management, and effective stakeholder engagement. I ensure every project stage aligns with your vision, allowing you to focus on your business goals while I handle the technical and creative execution.</p>
 								</div>
 							</div>
 						</div>
@@ -182,10 +181,8 @@ export default function Home() {
 				<section id='recent_works' className='container'>
 					<div className='recent_works_top flex flex-col items-center gap-5 text-center'>
 						<h2 className='subtitle'>My Recent Works</h2>
-						<p className='max-w-2xl'>We transform your ideas and desires into a distinctive web project that inspires both you and your customers.</p>
+						<p className='max-w-3xl'>My inspiration comes from envisioning a world where applications are more than just tools—they are seamless, user-friendly solutions that enhance people’s lives across various industries. I love the creative challenge of building development as a form of art, using modern technologies and innovative designs to push boundaries. My mission is to partner with companies looking to create applications that don’t just work but inspire, uplift, and empower users, building success from both a functional and an aesthetic standpoint.</p>
 					</div>
-					{/* <div class="container bg-red-800 w-[516.1875px]">1</div> */}
-					{/* tabs  */}
 					<div className='recent_works_tabs relative w-max mx-auto my-10 md:h-12 h-10 text-xs md:text-base grid grid-cols-4 items-center px-[3px] rounded-full bg-sectionColor dark:bg-darkSectionColor border border-primaryColor overflow-hidden transition'>
 						<div className='indicator absolute md:h-11 h-9 my-auto top-0 bottom-0 left-0 rounded-full bg-primaryColorLight' />
 						<button className='relative block md:h-10 h-8 md:px-6 px-3 tab2 rounded-full text-whiteColor' data-tabs='all'>
@@ -213,7 +210,9 @@ export default function Home() {
 										<div>
 											<p className='text-2xl font-bold lg:text-3xl'>Development, Design, UI/UX</p>
 											<small>
-												<p className=''>Bookfinity.com</p>
+												<a href='https://bookfinity.com/' target='_blank' className=''>
+													Bookfinity.com
+												</a>
 											</small>
 											<p className=''>I helped design, develop, and implement UX improvements for a bookshelf web app, enhancing its functionality and creating a more seamless, user-friendly experience.</p>
 										</div>
@@ -230,9 +229,11 @@ export default function Home() {
 										<div>
 											<p className='text-2xl font-bold lg:text-3xl'>Development, Design, UI/UX</p>
 											<small>
-												<p className=''>Bookfinity.com</p>
+												<a className='' href='https://creedencecontracting.com/' target='_blank'>
+													creedencecontracting.com
+												</a>
 											</small>
-											<p className=''>I helped design, develop, and implement UX improvements for a bookshelf web app, enhancing its functionality and creating a more seamless, user-friendly experience.</p>
+											<p className=''>Created an SEO-focused website for a small construction business, writing targeted web copy to showcase their services and expertise. Completed comprehensive QA testing to ensure a seamless user experience, providing the company with a reliable digital platform to reach and engage clients in their service area.</p>
 										</div>
 										<div className='text-2xl rotate-45'>
 											<i className='fa-solid fa-arrow-right-long' />
@@ -247,9 +248,11 @@ export default function Home() {
 										<div>
 											<p className='text-2xl font-bold lg:text-3xl'>Development, Design, UI/UX</p>
 											<small>
-												<p className=''>Bookfinity.com</p>
+												<a href='https://mcslawncarefw.com/' target='_blank' className=''>
+													mcslawncarefw.com
+												</a>
 											</small>
-											<p className=''>I helped design, develop, and implement UX improvements for a bookshelf web app, enhancing its functionality and creating a more seamless, user-friendly experience.</p>
+											<p className=''>Developed a clean, user-friendly website for a small lawn care business, focusing on clear messaging and SEO-optimized web copy to enhance local search visibility. Conducted thorough QA testing to ensure functionality across all devices, delivering a professional online presence that attracts new clients.</p>
 										</div>
 										<div className='text-2xl rotate-45'>
 											<i className='fa-solid fa-arrow-right-long' />
