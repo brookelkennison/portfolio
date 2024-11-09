@@ -103,7 +103,7 @@ export default function Home() {
 								</p>
 							</div>
 							<div className='flex items-center gap-3'>
-								<p className='text-5xl lg:text-6xl font-bold'>7K+</p>
+								<p className='text-5xl lg:text-6xl font-bold'>10K+</p>
 								<p>
 									Dev <br />
 									Hours
