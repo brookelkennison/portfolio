@@ -7,6 +7,11 @@ import emailjs from 'emailjs-com';
 export default function Home() {
 	const form = useRef();
 	const [emailSent, setEmailSent] = useState(false);
+	const [isExpanded, setIsExpanded] = useState(false);
+
+	const toggleExpand = () => {
+		setIsExpanded(!isExpanded);
+	};
 
 	const sendEmail = async () => {
 		try {
@@ -31,19 +36,18 @@ export default function Home() {
 	};
 
 	return (
-		<div className='flex items-center justify-center bg-gray-100 flex-col'>
+		<div className=' bg-gray-100'>
 			<Navbar />
 			<main>
 				{/*~~~~~~~~~~~~~~~ Hero Section ~~~~~~~~~~~~~~~*/}
 				<section id='hero' className='relative py-5'>
 					{/* blob */}
-					<div className='absolute right-0 top-[-20%] w-80 h-80 bg-primaryColorLight mix-blend-screen rounded-full blur-[150px] opacity-50' />
 					<div className='container'>
 						<div className='hidden md:block absolute top-0 left-[30%] lg:left-[35%] animate-scaleAnimation'>
 							<p className='font-Londrina text-[400px] lg:text-[450px] text-primaryColorLight uppercase -z-10 opacity-5'>hi</p>
 						</div>
 						{/* hero content  */}
-						<div className='flex items-center gap-5'>
+						<div className='flex items-center gap-5 justify-center'>
 							<div className='hero__content space-y-2 md:w-1/2'>
 								<h3 className='text-2xl md:text-3xl lg:text-4xl font-bold'>Hey, I&apos;m Brooke</h3>
 								<h1>
@@ -56,7 +60,12 @@ export default function Home() {
 									<div className='absolute left-0 bottom-0 w-80 h-80 bg-primaryColorLight mix-blend-screen rounded-full blur-[150px] opacity-50' />
 									<Image src='/images/person.jpg' alt='person' height='200' width='300' className='my-10 max-w-[90%] duration-300 origin-center rotate-[4.5deg] border-2 border-primaryColor rounded-[38px] hover:rotate-0 hover:border-primaryColorLight' />
 								</div>
-								<p className='max-w-xl pb-2'>As a driven Frontend Developer and UI/UX Designer with hands-on experience leading projects and collaborating across teams, I specialize in designing and developing robust web applications that prioritize user satisfaction and deliver measurable success. My expertise in React, Redux, modern state management, and CSS frameworks allows me to build seamless, high-performance applications that resonate with users and meet business objectives.</p>
+								<div className='max-w-xl pb-2'>
+									<p className={isExpanded ? '' : 'text-truncate'}>As a driven Frontend Developer and UI/UX Designer with hands-on experience leading projects and collaborating across teams, I specialize in designing and developing robust web applications that prioritize user satisfaction and deliver measurable success. My expertise in React, Redux, modern state management, and CSS frameworks allows me to build seamless, high-performance applications that resonate with users and meet business objectives.</p>
+									<a href='#' className='text-primaryColorLight' onClick={toggleExpand}>
+										{isExpanded ? 'See Less' : 'See More'}
+									</a>
+								</div>
 								<div className='flex items-center flex-wrap gap-5'>
 									<a href='/assets/BrookeKennisonResume.pdf' download>
 										<button className='btn_outline'>
@@ -181,20 +190,24 @@ export default function Home() {
 				<section id='recent_works' className='container'>
 					<div className='recent_works_top flex flex-col items-center gap-5 text-center'>
 						<h2 className='subtitle'>My Recent Works</h2>
-						<p className='max-w-3xl'>My inspiration comes from envisioning a world where applications are more than just tools—they are seamless, user-friendly solutions that enhance people’s lives across various industries. I love the creative challenge of building development as a form of art, using modern technologies and innovative designs to push boundaries. My mission is to partner with companies looking to create applications that don’t just work but inspire, uplift, and empower users, building success from both a functional and an aesthetic standpoint.</p>
+						<p className='max-w-3xl'>My inspiration comes from envisioning a world where applications are more than just tools—they are seamless, user-friendly solutions that enhance people’s lives across various industries. I love the creative challenge of building development as a form of art, using modern technologies and innovative designs to push boundaries.</p>
 					</div>
-					<div className='recent_works_tabs relative w-max mx-auto my-10 md:h-12 h-10 text-xs md:text-base grid grid-cols-4 items-center px-[3px] rounded-full bg-sectionColor dark:bg-darkSectionColor border border-primaryColor overflow-hidden transition'>
+					<div className='recent_works_tabs relative md:mx-auto my-10 md:h-10 h-auto md:h-12 text-xs md:text-base grid grid-cols-2 sm:grid-cols-4 md:grid-cols-4 gap-2 sm:gap-4 grid-flow-row items-center px-[3px] rounded-full bg-sectionColor dark:bg-darkSectionColor border border-primaryColor overflow-hidden transition'>
 						<div className='indicator absolute md:h-11 h-9 my-auto top-0 bottom-0 left-0 rounded-full bg-primaryColorLight' />
-						<button className='relative block md:h-10 h-8 md:px-6 px-3 tab2 rounded-full text-whiteColor' data-tabs='all'>
+
+						<button className='relative block md:h-10 h-8 md:px-6 px-3 tab2 rounded-full text-whiteColor whitespace-nowrap' data-tabs='all'>
 							All
 						</button>
-						<button data-tabs='development' className='relative block md:h-10 h-8 md:px-6 px-3 tab2 rounded-full'>
+
+						<button data-tabs='development' className='relative block md:h-10 h-8 md:px-6 px-3 tab2 rounded-full whitespace-nowrap'>
 							Development
 						</button>
-						<button data-tabs='uiux' className='relative block md:h-10 h-8 md:px-6 px-3 tab2 rounded-full'>
+
+						<button data-tabs='uiux' className='relative block md:h-10 h-8 md:px-6 px-3 tab2 rounded-full whitespace-nowrap'>
 							UI/UX Design
 						</button>
-						<button data-tabs='projectManagement' className='relative block md:h-10 h-8 md:px-6 px-3 tab2 rounded-full'>
+
+						<button data-tabs='projectManagement' className='relative block md:h-10 h-8 md:px-6 px-3 tab2 rounded-full whitespace-nowrap'>
 							Project Management
 						</button>
 					</div>
@@ -226,14 +239,14 @@ export default function Home() {
 								<Image width={500} height={500} src='/images/Creedence.png' alt='' className='w-full' />
 								<div className='absolute left-0 right-0 bottom-[-100%] p-5 lg:p-8'>
 									<div className='flex items-center justify-between bg-gradient-to-r from-primaryColorLight to-primaryColor text-whiteColor p-5 rounded-t-2xl'>
-										<div>
+										<div className='overflow-y-auto' style={{ maxHeight: '230px' }}>
 											<p className='text-2xl font-bold lg:text-3xl'>Development, Design, UI/UX</p>
 											<small>
-												<a className='' href='https://creedencecontracting.com/' target='_blank'>
+												<a className='text-whiteColor' href='https://creedencecontracting.com/' target='_blank' rel='noopener noreferrer'>
 													creedencecontracting.com
 												</a>
 											</small>
-											<p className=''>Created an SEO-focused website for a small construction business, writing targeted web copy to showcase their services and expertise. Completed comprehensive QA testing to ensure a seamless user experience, providing the company with a reliable digital platform to reach and engage clients in their service area.</p>
+											<p>Created an SEO-focused website for a small construction business, writing targeted web copy to showcase their services and expertise. Completed comprehensive QA testing to ensure a seamless user experience, providing the company with a reliable digital platform to reach and engage clients in their service area.</p>
 										</div>
 										<div className='text-2xl rotate-45'>
 											<i className='fa-solid fa-arrow-right-long' />
@@ -245,14 +258,14 @@ export default function Home() {
 								<Image width={500} height={500} src='/images/MCS.png' alt='' className='w-full' />
 								<div className='absolute left-0 right-0 bottom-[-100%] p-5 lg:p-8'>
 									<div className='flex items-center justify-between bg-gradient-to-r from-primaryColorLight to-primaryColor text-whiteColor p-5 rounded-t-2xl'>
-										<div>
+										<div className='overflow-y-auto' style={{ maxHeight: '230px' }}>
 											<p className='text-2xl font-bold lg:text-3xl'>Development, Design, UI/UX</p>
 											<small>
-												<a href='https://mcslawncarefw.com/' target='_blank' className=''>
+												<a className='text-whiteColor' href='https://mcslawncarefw.com/' target='_blank' rel='noopener noreferrer'>
 													mcslawncarefw.com
 												</a>
 											</small>
-											<p className=''>Developed a clean, user-friendly website for a small lawn care business, focusing on clear messaging and SEO-optimized web copy to enhance local search visibility. Conducted thorough QA testing to ensure functionality across all devices, delivering a professional online presence that attracts new clients.</p>
+											<p>Developed a clean, user-friendly website for a small lawn care business, focusing on clear messaging and SEO-optimized web copy to enhance local search visibility. Conducted thorough QA testing to ensure functionality across all devices, delivering a professional online presence that attracts new clients.</p>
 										</div>
 										<div className='text-2xl rotate-45'>
 											<i className='fa-solid fa-arrow-right-long' />
@@ -337,7 +350,7 @@ export default function Home() {
 				<section id='skills' className='container'>
 					<div className='skills_top flex flex-col items-center gap-5 text-center'>
 						<h2 className='subtitle'>My Skills</h2>
-						<p className='max-w-2xl'>We transform your ideas and desires into a distinctive web project that inspires both you and your customers.</p>
+						<p className='max-w-2xl'>My mission is to partner with companies looking to create applications that don’t just work but inspire, uplift, and empower users, building success from both a functional and an aesthetic standpoint.</p>
 					</div>
 					<div className='flex flex-wrap justify-center gap-5 md:gap-10 mt-10'>
 						{/* figma icon  */}

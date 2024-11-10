@@ -7,8 +7,6 @@
   --foreground: #171717;
 }
 
-
-
 body {
   color: var(--foreground);
   background: var(--background);
@@ -20,12 +18,7 @@ header#navbar .text-whiteColor {
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-}
-
-@layer utilities {
+  /* General body styles */
   html {
     @apply scroll-smooth;
   }
@@ -38,6 +31,7 @@ header#navbar .text-whiteColor {
     @apply py-16 md:pt-28 md:pb-20;
   }
 
+  /* Form controls */
   select,
   input,
   textarea {
@@ -52,30 +46,10 @@ header#navbar .text-whiteColor {
   input:active {
     @apply outline-none border-primaryColorLight;
   }
-}
 
-@layer utilities {
-  /* nav link  */
-  .nav-link {
-    @apply relative font-bold text-textColor lg:text-primaryColor dark:text-textColor;
-  }
-
-  .nav-link::before {
-    @apply content-[''] absolute w-full h-[2px] bg-gradient-to-r from-primaryColorLight to-primaryColor -bottom-[5px] left-0 scale-x-0 transition-transform ease-in-out origin-right duration-500;
-  }
-
-  .active::before,
-  .nav-link:hover::before {
-    @apply scale-x-100 origin-left;
-  }
-
-  /* button  */
+  /* Button styles */
   .btn {
-    @apply relative overflow-hidden bg-gradient-to-r from-primaryColorLight to-primaryColor text-whiteColor px-7 py-3 rounded-full capitalize font-bold  flex justify-center items-center;
-  }
-
-  .btn::before {
-    @apply content-[''] absolute w-[100%] h-[100%] bg-gradient-to-r from-primaryColor to-primaryColorLight top-0 left-0 rounded-full  scale-x-0 transition-transform ease-in-out origin-right duration-300;
+    @apply relative overflow-hidden bg-gradient-to-r from-primaryColorLight to-primaryColor text-whiteColor px-7 py-3 rounded-full capitalize font-bold flex justify-center items-center;
   }
 
   .btn:hover::before {
@@ -86,18 +60,17 @@ header#navbar .text-whiteColor {
     @apply border border-primaryColorLight text-primaryColorLight py-4 px-9 rounded-full hover:bg-primaryColorLight hover:text-whiteColor duration-300;
   }
 
+  /* Title and subtitle */
   .title,
   .subtitle {
-    @apply text-4xl lg:text-6xl xl:text-[65px] font-bold bg-gradient-to-r from-primaryColorLight to-primaryColor  dark:to-whiteColor inline-block text-transparent bg-clip-text pb-2;
+    @apply text-4xl lg:text-6xl xl:text-[65px] font-bold bg-gradient-to-r from-primaryColorLight to-primaryColor dark:to-whiteColor inline-block text-transparent bg-clip-text pb-2;
   }
 
   .subtitle {
     @apply text-3xl md:text-4xl lg:text-5xl;
   }
-}
 
-@layer utilities {
-  /* hero  */
+  /* Hero and social icons */
   .social-icon {
     @apply relative border border-primaryColorLight text-primaryColorLight h-10 w-10 rounded-full grid place-items-center cursor-pointer hover:text-whiteColor duration-300;
   }
@@ -110,7 +83,7 @@ header#navbar .text-whiteColor {
     @apply scale-100 origin-center;
   }
 
-  /* My Quality Services */
+  /* Hover effects for service items */
   .service_item {
     @apply flex flex-wrap items-center gap-3 px-4 py-8 border-b border-primaryColorLight hover:bg-primaryColorLight cursor-pointer duration-300;
   }
@@ -131,39 +104,7 @@ header#navbar .text-whiteColor {
     @apply text-whiteColor -rotate-90;
   }
 
-  /* My Recent Works */
-  .indicator {
-    transition: left 0.4s;
-  }
-
-  .work_card > div {
-    @apply duration-500;
-  }
-
-  .work_card:hover > div {
-    @apply bottom-0;
-  }
-
-  .work_card div i {
-    @apply duration-300 delay-300;
-  }
-
-  .work_card:hover div i {
-    @apply -rotate-90;
-  }
-
-  /* Experience & Education */
-  #exp_edu .exp_edu_card,
-  #exp_edu .exp_edu_card > p {
-    @apply duration-300;
-  }
-
-  #exp_edu .exp_edu_card:hover,
-  #exp_edu .exp_edu_card:hover > p {
-    @apply text-whiteColor;
-  }
-
-  /* My Skills */
+  /* Skills card hover */
   .skills_card img {
     @apply duration-300;
     width: 95px;
@@ -174,7 +115,7 @@ header#navbar .text-whiteColor {
     @apply scale-110;
   }
 
-  /* Recent Blogs  */
+  /* Blog hover effect */
   .blog_card img {
     @apply w-full duration-300;
   }
@@ -195,12 +136,13 @@ header#navbar .text-whiteColor {
   .blog_card:hover .blog_card_info p {
     @apply text-whiteColor;
   }
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  /* Text Truncate */
+  .text-truncate {
+    display: -webkit-box;
+    -webkit-line-clamp: 4; /* Limit to 4 lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }
-

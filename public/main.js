@@ -69,13 +69,20 @@ if (typeof document !== 'undefined' && typeof window !== 'undefined') {
 
 	if (tabs.length > 0 && indicator) {
 		indicator.style.width = tabs[0].getBoundingClientRect().width + 'px';
-		indicator.style.left = tabs[0].getBoundingClientRect().left - tabs[0].parentElement.getBoundingClientRect().left + 'px';
+		indicator.style.left = tabs[0].getBoundingClientRect().left - tabs[0].parentElement.getBoundingClientRect().left - 4 + 'px';
+		indicator.style.bottom = 'auto';
 
 		tabs.forEach((tab) => {
 			tab.addEventListener('click', () => {
 				indicator.style.width = tab.getBoundingClientRect().width + 'px';
-				indicator.style.left = tab.getBoundingClientRect().left - tab.parentElement.getBoundingClientRect().left + 'px';
-
+				indicator.style.left = tab.getBoundingClientRect().left - tab.parentElement.getBoundingClientRect().left - 4 + 'px';
+				if (tab.getBoundingClientRect().bottom - tab.parentElement.getBoundingClientRect().bottom < -10) {
+					indicator.style.bottom = 'auto';
+					indicator.style.top = 0;
+				} else {
+					indicator.style.bottom = 0;
+					indicator.style.top = 'auto';
+				}
 				tabs.forEach((t) => t.classList.remove('text-whiteColor'));
 				tab.classList.add('text-whiteColor');
 
