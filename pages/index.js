@@ -35,8 +35,13 @@ export default function Home() {
 		await sendEmail();
 	};
 
+	const centerTab = (event) => {
+		// Use scrollIntoView to center the clicked tab
+		event.target.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+	};
+
 	return (
-		<div className=' bg-gray-100'>
+		<div className='bg-gray-100 overflow-hidden'>
 			<Navbar />
 			<main>
 				{/*~~~~~~~~~~~~~~~ Hero Section ~~~~~~~~~~~~~~~*/}
@@ -190,27 +195,35 @@ export default function Home() {
 				<section id='recent_works' className='container'>
 					<div className='recent_works_top flex flex-col items-center gap-5 text-center'>
 						<h2 className='subtitle'>My Recent Works</h2>
-						<p className='max-w-3xl'>My inspiration comes from envisioning a world where applications are more than just tools—they are seamless, user-friendly solutions that enhance people’s lives across various industries. I love the creative challenge of building development as a form of art, using modern technologies and innovative designs to push boundaries.</p>
+						<p className='max-w-3xl'>My inspiration comes from envisioning a world where applications are more than just tools—they are seamless, user-friendly solutions that enhance people’s lives across various industries. I love the creative challenge of building development as a form of art, using modern technologies and innovative designs to push boundaries. My mission is to partner with companies looking to create applications that don’t just work but inspire, uplift, and empower users, building success from both a functional and an aesthetic standpoint.</p>
 					</div>
-					<div className='recent_works_tabs relative md:mx-auto my-10 md:h-10 h-auto md:h-12 text-xs md:text-base grid grid-cols-2 sm:grid-cols-4 md:grid-cols-4 gap-2 sm:gap-4 grid-flow-row items-center px-[3px] rounded-full bg-sectionColor dark:bg-darkSectionColor border border-primaryColor overflow-hidden transition'>
-						<div className='indicator absolute md:h-11 h-9 my-auto top-0 bottom-0 left-0 rounded-full bg-primaryColorLight' />
+					{/* <div class='recent_works_tabs flex overflow-x-auto w-screen pb-1 dark:bg-darkSectionColor '>
+						<div className='scrollbar-hide rounded-full bg-sectionColor border border-primaryColor flex'>
+							<div class='min-w-[120px] px-4 py-2 rounded-lg mx-2 text-center whitespace-nowrap relative'>Tab 1</div>
+							<div class='min-w-[120px] px-4 py-2 rounded-lg mx-2 text-center whitespace-nowrap relative'>Tab 2</div>
+							<div class='min-w-[120px] px-4 py-2 rounded-lg mx-2 text-center whitespace-nowrap relative'>Tab 3</div>
+							<div class='min-w-[120px] px-4 py-2 rounded-lg mx-2 text-center whitespace-nowrap relative'>Tab 4</div>
+						</div>
+					</div> */}
+					<div class='recent_works_tabs relative flex overflow-x-auto sm:w-screen md:w-auto pb-1 dark:bg-darkSectionColor my-5 snap-x snap-mandatory'>
+						<div class='md:w-full w-auto justify-between flex scrollbar-hide md:h-11 h-9 rounded-full bg-sectionColor border text-xs border-primaryColor flex transition snap-center'>
+							<div class='indicator absolute md:h-11 h-9 my-auto bottom-1 left-0 rounded-full bg-primaryColorLight'></div>
 
-						<button className='relative block md:h-10 h-8 md:px-6 px-3 tab2 rounded-full text-whiteColor whitespace-nowrap' data-tabs='all'>
-							All
-						</button>
-
-						<button data-tabs='development' className='relative block md:h-10 h-8 md:px-6 px-3 tab2 rounded-full whitespace-nowrap'>
-							Development
-						</button>
-
-						<button data-tabs='uiux' className='relative block md:h-10 h-8 md:px-6 px-3 tab2 rounded-full whitespace-nowrap'>
-							UI/UX Design
-						</button>
-
-						<button data-tabs='projectManagement' className='relative block md:h-10 h-8 md:px-6 px-3 tab2 rounded-full whitespace-nowrap'>
-							Project Management
-						</button>
+							<button class='min-w-[140px] whitespace-nowrap relative block md:h-10 h-8 md:px-6 px-3 tab2 rounded-full text-whiteColor snap-start' data-tabs='all' onClick={(event) => centerTab(event)}>
+								All
+							</button>
+							<button class='min-w-[140px] whitespace-nowrap relative block md:h-10 h-8 md:px-6 px-3 tab2 rounded-full snap-start' data-tabs='development' onClick={(event) => centerTab(event)}>
+								Development
+							</button>
+							<button class='min-w-[140px] whitespace-nowrap relative block md:h-10 h-8 md:px-6 px-3 tab2 rounded-full snap-start' data-tabs='uiux' onClick={(event) => centerTab(event)}>
+								UI/UX Design
+							</button>
+							<button class='min-w-[140px] whitespace-nowrap relative block md:h-10 h-8 md:px-6 px-3 tab2 rounded-full snap-start' data-tabs='projectManagement' onClick={(event) => centerTab(event)}>
+								Project Management
+							</button>
+						</div>
 					</div>
+
 					<div className='mt-6 relative rounded-3xl'>
 						{/* blob */}
 						<div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-primaryColorLight mix-blend-screen rounded-full blur-[150px] opacity-50' />
@@ -350,7 +363,7 @@ export default function Home() {
 				<section id='skills' className='container'>
 					<div className='skills_top flex flex-col items-center gap-5 text-center'>
 						<h2 className='subtitle'>My Skills</h2>
-						<p className='max-w-2xl'>My mission is to partner with companies looking to create applications that don’t just work but inspire, uplift, and empower users, building success from both a functional and an aesthetic standpoint.</p>
+						<p className='max-w-2xl'>We transform your ideas and desires into a distinctive web project that inspires both you and your customers.</p>
 					</div>
 					<div className='flex flex-wrap justify-center gap-5 md:gap-10 mt-10'>
 						{/* figma icon  */}
