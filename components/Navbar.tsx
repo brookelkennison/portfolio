@@ -32,19 +32,16 @@ const Navbar: React.FC = () => {
 							</a>
 						</li>
 						<li>
-							<a href='#blogs' className='nav-link'>
-								Blogs
-							</a>
-						</li>
-						<li>
 							<a href='#contact' className='nav-link'>
 								Contact
 							</a>
 						</li>
 						<li>
-							<button className='btn ml-10'>
-								<span className='z-10'>Hire Me!</span>
-							</button>
+							<a href='#contact' className='nav-link'>
+								<button className='btn ml-10'>
+									<span className='z-10'>Hire Me!</span>
+								</button>
+							</a>
 						</li>
 					</ul>
 
