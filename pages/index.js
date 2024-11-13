@@ -131,7 +131,7 @@ export default function Home() {
 					<div className='container'>
 						<div className='quality_services_top flex flex-col items-center gap-5 text-center'>
 							<h2 className='subtitle'>What I Offer</h2>
-							<p className='max-w-3xl'>With a blend of technical expertise, creative design, and a user-first approach, I’m here to help you build web applications that stand out and deliver real value. Whether you’re looking to enhance user experience, streamline your codebase, or implement modern technologies, I provide the solutions you need to achieve your goals.</p>
+							<p className='max-w-4xl'>With a blend of technical expertise, creative design, and a user-first approach, I’m here to help you build web applications that stand out and deliver real value. Whether you’re looking to enhance user experience, streamline your codebase, or implement modern technologies, I provide the solutions you need to achieve your goals.</p>
 						</div>
 						{/* list section  */}
 						<div className='my-10'>
@@ -195,7 +195,7 @@ export default function Home() {
 				<section id='recent_works' className='container'>
 					<div className='recent_works_top flex flex-col items-center gap-5 text-center'>
 						<h2 className='subtitle'>My Recent Works</h2>
-						<p className='max-w-3xl'>My inspiration comes from envisioning a world where applications are more than just tools—they are seamless, user-friendly solutions that enhance people’s lives across various industries. I love the creative challenge of building development as a form of art, using modern technologies and innovative designs to push boundaries. My mission is to partner with companies looking to create applications that don’t just work but inspire, uplift, and empower users, building success from both a functional and an aesthetic standpoint.</p>
+						<p className='max-w-4xl'>My inspiration comes from envisioning a world where applications are more than just tools—they are seamless, user-friendly solutions that enhance people’s lives across various industries. I love the creative challenge of building development as a form of art, using modern technologies and innovative designs to push boundaries. My mission is to partner with companies looking to create applications that don’t just work but inspire, uplift, and empower users, building success from both a functional and an aesthetic standpoint.</p>
 					</div>
 					{/* <div class='recent_works_tabs flex overflow-x-auto w-screen pb-1 dark:bg-darkSectionColor '>
 						<div className='scrollbar-hide rounded-full bg-sectionColor border border-primaryColor flex'>
@@ -363,7 +363,7 @@ export default function Home() {
 				<section id='skills' className='container'>
 					<div className='skills_top flex flex-col items-center gap-5 text-center'>
 						<h2 className='subtitle'>My Skills</h2>
-						<p className='max-w-2xl'>We transform your ideas and desires into a distinctive web project that inspires both you and your customers.</p>
+						<p className='max-w-4xl'>My expertise as a frontend developer includes React, Redux, TypeScript, and UI/UX design. I build scalable, high-performance applications with intuitive user flows and visually appealing interfaces. I focus on SEO and performance optimization for mobile-friendliness and fast load times. My drive to learn has also given me experience building APIs and using object-oriented backend languages like PHP and the Laravel framework. With strong collaboration and project leadership, I deliver user-centered solutions that solve real-world problems.</p>
 					</div>
 					<div className='flex flex-wrap justify-center gap-5 md:gap-10 mt-10'>
 						{/* figma icon  */}
